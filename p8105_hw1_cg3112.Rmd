@@ -10,7 +10,7 @@ library(tidyverse)
   d = c(1,2,3,1,2,1,2,3)
 ```
 
-##Creating a dataframe
+##Creating a dataframe (Problem 1)
 ```{r}
 plot_df = tibble(
   a = rnorm(8),
@@ -31,7 +31,7 @@ as.numeric(plot_df)
 #This function does not work because list objects cannot be coerced into a double
 ```
 
-#Manipulating the Tibble and adding variables
+#Manipulating the Tibble and adding variables (End of Problem 1)
 ```{r warning=FALSE}
 mutate(plot_df,
        b_numb = as.numeric(b),
@@ -43,4 +43,17 @@ mutate(plot_df,
        )
 ```
 
+#Creating a data frame (Problem 2)
+```{r}
+plot_df2 = tibble(
+  x = rnorm(500),
+  y = rnorm(500),
+  xy = x + y > 1,
+  xy_numb = as.numeric(xy),
+  xy_factor = as.factor(xy_numb)
+)
+```
+
+This tibble has `r nrow(plot_df2)` rows and `r ncol(plot_df2)` columns.
+The vector x also has a mean of `r mean(plot_df2$x)`, a median of `r median(plot_df2$x)`, and a standard deviation of `r sd(plot_df2$x)`.
 
