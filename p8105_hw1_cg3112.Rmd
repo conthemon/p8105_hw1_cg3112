@@ -20,5 +20,27 @@ plot_df = tibble(
 )
 
 plot_df
+
 ```
+
+```{r eval=FALSE}
+mean(plot_df)
+#This function does not work if the data is not numeric or logical
+
+as.numeric(plot_df)
+#This function does not work because list objects cannot be coerced into a double
+```
+
+#Manipulating the Tibble and adding variables
+```{r warning=FALSE}
+mutate(plot_df,
+       b_numb = as.numeric(b),
+       f_new = b_numb*a,
+       b_fact = as.factor(b),
+       g_new = b_fact*a,
+       b_numb2 = as.numeric(b_fact),
+       h_new = b_numb2*a
+       )
+```
+
 
