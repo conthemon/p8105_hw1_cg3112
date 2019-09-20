@@ -62,6 +62,7 @@ The proportion of cases where x + y > 1 is `r mean(plot_df2$xy)`.
 ```{r}
 #Plot 1 (logic)
  ggplot(data = plot_df2, mapping = aes(x, y, color = xy)) + geom_point()
+ ggsave("scatter_plot1.pdf", height = 4, width = 6)
 #Plot 2 (numeric)
 #Here, the scale is based off the number range from 0-1, but we only have a value of 0 or 1.
  ggplot(data = plot_df2, mapping = aes(x, y, color = xy_numb)) + geom_point()
