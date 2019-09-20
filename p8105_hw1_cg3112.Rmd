@@ -56,4 +56,17 @@ plot_df2 = tibble(
 
 This tibble has `r nrow(plot_df2)` rows and `r ncol(plot_df2)` columns.
 The vector x also has a mean of `r mean(plot_df2$x)`, a median of `r median(plot_df2$x)`, and a standard deviation of `r sd(plot_df2$x)`.
+The proportion of cases where x + y > 1 is `r mean(plot_df2$xy)`.
+
+#Creating Scatterplots of the Tibble data (End of Problem 2)
+```{r}
+#Plot 1 (logic)
+ ggplot(data = plot_df2, mapping = aes(x, y, color = xy)) + geom_point()
+#Plot 2 (numeric)
+#Here, the scale is based off the number range from 0-1, but we only have a value of 0 or 1.
+ ggplot(data = plot_df2, mapping = aes(x, y, color = xy_numb)) + geom_point()
+#Plot 3 (factor)
+#Here, the scale is based off of the factor, either 0 or 1, which is the same as the logic plot, but with numbers instead.
+ ggplot(data = plot_df2, mapping = aes(x, y, color = xy_factor)) + geom_point()
+```
 
